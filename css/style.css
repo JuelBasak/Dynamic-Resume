@@ -8,12 +8,15 @@ html {
   color: #333;
   font-family: "Josefin Sans";
   line-height: 1.5;
+  
 }
 
 body {
   padding: 2rem 2.5rem;
-  background: linear-gradient(#dfe0db, #dfe0db 50%, #fcebe1 50%, #fcebe1);
-  /*   background: linear-gradient (#888, #888 50%, salmon 50%, salmon); */
+  /* background: linear-gradient(#dfe0db, #dfe0db 50%, #fcebe1 50%, #fcebe1); */
+  /* background: linear-gradient (#888, #888 50%, salmon 50%, salmon); */
+  background-image: linear-gradient(#888, salmon);
+  
 }
 
 h1 {
@@ -53,6 +56,10 @@ ul {
   list-style: none;
 }
 
+.resume{
+  border-radius: 20px;
+}
+
 .profile {
   text-align: center;
 }
@@ -76,13 +83,20 @@ ul {
 .contact li {
   text-align: right;
   text-transform: uppercase;
-  padding: 1rem;
-  color: #888;
-  border-bottom: 1px solid #888;
+  margin: 0.5rem;
+  /* color: #888; */
+  /* border-bottom: 1px solid #888; */
   font-size: 0.8rem;
 }
 
-.skills > ul {
+.column .contact img{
+  /* background-color: #333; */
+  /* padding: 0.5rem; */
+  width: 1rem;
+  margin-bottom: -3px;
+}
+
+.section1 > ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
@@ -116,4 +130,25 @@ ul {
   padding: 3rem;
   max-width: 1000px;
   margin: auto;
+}
+
+@media print {
+  /* div.resume {
+    overflow: hidden;
+  } */
+
+  /* div.education,
+  div.experience,
+  div.certificates */
+
+  p, li,
+  section.education h2
+  {
+    page-break-inside: avoid;
+  }
+
+  body{
+    background: #2CBFAA;
+  }
+
 }
