@@ -141,14 +141,10 @@ ul {
   div.experience,
   div.certificates */
 
-  p, li,
-  section.education h2
+  p, li, education h2
   {
     page-break-inside: avoid;
+    border: 0;
   }
-
-  body{
-    background: #2CBFAA;
-  }
-
 }
+
