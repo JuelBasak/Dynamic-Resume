@@ -140,13 +140,30 @@ ul {
 }
 
 @media print {
+<<<<<<< HEAD
   p, li, section.education h2
+=======
+  /* div.resume {
+    overflow: hidden;
+  } */
+
+  /* div.education,
+  div.experience,
+  div.certificates */
+
+  p, li, education h2
+>>>>>>> main
   {
     page-break-inside: avoid;
+    border: 0;
   }
+}
 
+<<<<<<< HEAD
   body{
     background: white;
   }
 
 }
+=======
+>>>>>>> main
