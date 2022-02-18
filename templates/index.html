@@ -46,18 +46,24 @@
         <section class="experience">
           <h2>Experience</h2>
           <ul class="timeline">
+
+            {% for i in main_dict['table3_dict']%}
+
             <li class="event">
-              <span class="duration">From {{main_dict['table3_dict']['start_date']}} To {{main_dict['table3_dict']['end_date']}} ({{main_dict['table3_dict']['duration']}} Years)</span>
+              <span class="duration">From {{i['start_date']}} To {{i['end_date']}} ({{i['duration']}} Years)</span>
               <div class="content">
-                <h3>{{main_dict['table3_dict']['designation']}}</h3>
-                <p><em>{{main_dict['table3_dict']['company']}}, {{main_dict['table3_dict']['location']}}</em></p>
+                <h3>{{i['designation']}}</h3>
+                <p><em>{{i['company']}}, {{i['location']}}</em></p>
                 <p>
-                  {{main_dict['table3_dict']['details']}}
+                  {{i['details']}}
                 </p>
               </div>
             </li>
+            {% endfor %}
+
           </ul>
         </section>
+
         <br>
 
         <h2>Skills/Interests</h2>
@@ -158,6 +164,13 @@
           <h3>{{i['project_name']}}</h3>
           <p>{{i['details']}}
           </p>
+          {% if i['youtube_link'] != None %}
+          <p>
+            <a style="color:blue;" href="{{i['youtube_link']}}" target="_blank">Project
+              YouTube Link</a>
+          </p>
+          {% endif %}
+
           {% if i['project_deployment_link'] != '' %}
           <p>
             <a style="color:blue;" href="{{i['project_deployment_link']}}" target="_blank">Project

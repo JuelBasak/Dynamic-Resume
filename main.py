@@ -24,7 +24,7 @@ def get_data():
 
     table2_dict = {}
 
-    for i in conn.execute('SELECT * FROM EDUCATION'):
+    for i in conn.execute('SELECT * FROM EDUCATION ORDER BY "tid" DESC;'):
         table2_dict['tid'] = i[0]
         table2_dict['degree'] = i[1]
         table2_dict['university'] = i[2]
@@ -37,43 +37,47 @@ def get_data():
     main_dict['table2_dict'] = table2_dict
 
     table3_dict = {}
+    l = []
 
-    for i in conn.execute('SELECT * FROM EXPERIENCE'):
-        table3_dict['tid'] = i[0]
-        table3_dict['designation'] = i[1]
-        table3_dict['company'] = i[2]
-        table3_dict['location'] = i[3]
-        table3_dict['start_date'] = i[4]
-        table3_dict['end_date'] = i[5]
-        table3_dict['duration'] = i[6]
-        table3_dict['details'] = i[7]
+    for i in conn.execute('SELECT * FROM EXPERIENCE ORDER BY "tid" DESC;'):
+        temp_dict = {}
+        temp_dict['tid'] = i[0]
+        temp_dict['designation'] = i[1]
+        temp_dict['company'] = i[2]
+        temp_dict['location'] = i[3]
+        temp_dict['start_date'] = i[4]
+        temp_dict['end_date'] = i[5]
+        temp_dict['duration'] = i[6]
+        temp_dict['details'] = i[7]
 
-    main_dict['table3_dict'] = table3_dict
+        l.append(temp_dict)
+
+    main_dict['table3_dict'] = l
 
     l = []
 
-    for i in conn.execute('SELECT * FROM SKILLS'):
+    for i in conn.execute('SELECT * FROM SKILLS;'):
         l.append(i[1])
             
     main_dict['table4_dict'] = l
 
     l = []
 
-    for i in conn.execute('SELECT * FROM INTEREST'):
+    for i in conn.execute('SELECT * FROM INTEREST;'):
         l.append(i[1])
             
     main_dict['table5_dict'] = l
 
     l = []
 
-    for i in conn.execute('SELECT * FROM PROFESSION'):
+    for i in conn.execute('SELECT * FROM PROFESSION;'):
         l.append(i[1])
             
     main_dict['table6_dict'] = l
 
     l = []
 
-    for i in conn.execute('SELECT * FROM CERTIFICATES'):
+    for i in conn.execute('SELECT * FROM CERTIFICATES ORDER BY "tid" DESC;'):
         temp_dict = {}
         temp_dict['tid'] = i[0]
         temp_dict['certificate_name'] = i[1]
@@ -101,6 +105,7 @@ def get_data():
         temp_dict['end_date'] = i[5]
         temp_dict['duration'] = i[6]
         temp_dict['details'] = i[7]
+        temp_dict['youtube_link'] = i[8]  
         
         l.append(temp_dict)
             
