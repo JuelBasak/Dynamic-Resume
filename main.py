@@ -30,10 +30,8 @@ def get_data(database_dir, database_name):
     main_dict = {}
     for sheet_name in sheet_names:
         main_dict[sheet_name] = get_data_helper(database_location=database_location, sheet_name=sheet_name)
-
     print(main_dict)
-
-
+    return main_dict
 
 @app.route('/', methods=['GET', 'POST'])
 def main():

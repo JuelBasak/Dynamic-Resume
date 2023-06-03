@@ -16,46 +16,46 @@
   <div class="resume">
     <div class="column">
       <section class="profile">
-        <h1>{{main_dict['table1_dict']['name']}}</h1>
-        <p><em>{{main_dict['table1_dict']['heading']}}</em></p>
+        <h1>{{main_dict['ABOUT_ME'][0]['NAME']}}</h1>
+        <p><em>{{main_dict['ABOUT_ME'][0]['HEADING']}}</em></p>
         <img src="/static/images/photo.jpg" alt="">
       </section>
 
       <section class="section1">
         <h2>About Me</h2>
         <section class="objectives">
-          <p>{{main_dict['table1_dict']['description']}}</p>
+          <p>{{main_dict['ABOUT_ME'][0]['DESCRIPTION']}}</p>
         </section>
 
         <br><br><br>
 
-        <section class="education">
+        <section class="EDUCATION">
           <h2>Education</h2>
           <ul class="timeline">
             <li class="event">
-              <span class="duration">From {{main_dict['table2_dict']['start_date']}} To {{main_dict['table2_dict']['end_date']}} ({{main_dict['table2_dict']['duration']}} Years) </span>
+              <span class="duration">From {{main_dict['EDUCATION']['START_DATE']}} To {{main_dict['EDUCATION']['END_DATE']}} ({{main_dict['EDUCATION']['DURATION']}}) </span>
               <div class="content">
-                <h3>{{main_dict['table2_dict']['degree']}}</h3>
-                <p><em>{{main_dict['table2_dict']['university']}}</em></p>
-                <p>CGPA / Percentage: {{main_dict['table2_dict']['score']}}</p>
+                <h3>{{main_dict['EDUCATION']['DEGREE']}}</h3>
+                <p><em>{{main_dict['EDUCATION']['UNIVERSITY']}}</em></p>
+                <p>CGPA / Percentage: {{main_dict['EDUCATION']['SCORE']}}</p>
               </div>
             </li>
           </ul>
         </section>
 
         <section class="experience">
-          <h2>Experience</h2>
+          <h2>experience</h2>
           <ul class="timeline">
 
-            {% for i in main_dict['table3_dict']%}
+            {% for i in main_dict['EXPERIENCE'] %}
 
             <li class="event">
-              <span class="duration">From {{i['start_date']}} To {{i['end_date']}} ({{i['duration']}} Years)</span>
+              <span class="duration">From {{i['START_DATE']}} To {{i['END_DATE']}} ({{i['DURATION']}})</span>
               <div class="content">
-                <h3>{{i['designation']}}</h3>
-                <p><em>{{i['company']}}, {{i['location']}}</em></p>
+                <h3>{{i['DESIGNATION']}}</h3>
+                <p><em>{{i['COMPANY']}}, {{i['LOCATION']}}</em></p>
                 <p>
-                  {{i['details']}}
+                  {{i['DETAILS']}}
                 </p>
               </div>
             </li>
@@ -71,7 +71,7 @@
           <li>
             <h3>Skills</h3>
             <ol type="1">
-              {% for i in main_dict['table4_dict'] %}
+              {% for i in main_dict['SKILLS'] %}
                 <li>{{i}}</li>
               {% endfor %}
             </ol>
@@ -79,7 +79,7 @@
           <li>
             <h3>Interests</h3>
             <ol type="1">
-              {% for i in main_dict['table5_dict'] %}
+              {% for i in main_dict['INTERESTS'] %}
                 <li>{{i}}</li>
               {% endfor %}
             </ol>
@@ -94,17 +94,17 @@
         <br>
         <ul>
 
-          <li><a href="mailto:{{main_dict['table1_dict']['email']}}">{{main_dict['table1_dict']['email']}}</a>
+          <li><a href="mailto:{{main_dict['ABOUT_ME']['EMAIL']}}">{{main_dict['ABOUT_ME']['EMAIL']}}</a>
             <img src="/static/images/mail-64.png" alt="">
           </li>
-          <li><a href="https://www.{{main_dict['table1_dict']['linkedin']}}"
-              target="_blank">{{main_dict['table1_dict']['linkedin']}}</a>
+          <li><a href="https://www.{{main_dict['ABOUT_ME']['LINKEDIN']}}"
+              target="_blank">{{main_dict['ABOUT_ME']['LINKEDIN']}}</a>
             <img src="/static/images/linkedin-5-64.png" alt="">
           </li>
-          <li><a href="https://{{main_dict['table1_dict']['git']}}" target="_blank">{{main_dict['table1_dict']['git']}}</a>
+          <li><a href="https://{{main_dict['ABOUT_ME']['GIT']}}" target="_blank">{{main_dict['ABOUT_ME']['GIT']}}</a>
             <img src="/static/images/github-10-64.png" alt="">
           </li>
-          <li><a href="https://www.{{main_dict['table1_dict']['kaggle']}}" target="_blank">{{main_dict['table1_dict']['kaggle']}}</a>
+          <li><a href="https://www.{{main_dict['ABOUT_ME']['kaggle']}}" target="_blank">{{main_dict['ABOUT_ME']['KAGGLE']}}</a>
             <img src="/static/images/kaggle.png" alt="">
           </li>
         </ul>
@@ -115,30 +115,31 @@
         <section class="objectives">
           <p>
           <ol type="1">
-            {% for i in main_dict['table6_dict'] %}
+            {% for i in main_dict['PROFESSION'] %}
                 <li>{{i}}</li>
               {% endfor %}
           </ol>
           </p>
         </section>
+      </section>
 
         <section class="certificates">
           <h2>Certificates</h2>
 
-          {% for i in main_dict['table7_dict'] %}
+          {% for i in main_dict['CERTIFICATES'] %}
 
             <ul class="timeline">
               <li class="event">
-                <span class="duration">From {{i['start_date']}} To {{i['end_date']}}</span>
+                <span class="duration">From {{i['START_DATE']}} To {{i['END_DATE']}}</span>
                 
                 <div class="content">
-                  <h3>{{i['certificate_name']}}</h3>
-                  <h3>{{i['issuer']}}</h3>
-                  <p>{{i['location']}}</p>
-                  <p>{{i['details']}}</p>
+                  <h3>{{i['CERTIFICATE_NAME']}}</h3>
+                  <h3>{{i['ISSUER']}}</h3>
+                  <p>{{i['LOCATION']}}</p>
+                  <p>{{i['DETAILS']}}</p>
                   <p>
                     <a style="color:blue;"
-                      href="{{i['certificate_link']}}"
+                      href="{{i['CERTIFICATE_LINK']}}"
                       target="_blank">Certificate Link</a>
                   </p>
                 </div>
@@ -147,40 +148,39 @@
           <br>
           {% endfor %}
         </section>
-      </section>
     </div>
   </div>
 
   <section class="project">
     <h2>Projects</h2>
 
-    {% for i in main_dict['table8_dict'] %}
+    {% for i in main_dict['PROJECTS'] %}
 
     <ul class="timeline">
       <li class="event">
-        <span class="duration">From {{i['start_date']}} To {{i['end_date']}}</span>
+        <span class="duration">From {{i['START_DATE']}} To {{i['END_DATE']}}</span>
         
         <div class="content">
-          <h3>{{i['project_name']}}</h3>
-          <p>{{i['details']}}
+          <h3>{{i['PROJECT_NAME']}}</h3>
+          <p>{{i['DETAILS']}}
           </p>
-          {% if i['youtube_link'] != None %}
+          {% if i['YOUTUBE_LINK'] != None %}
           <p>
-            <a style="color:blue;" href="{{i['youtube_link']}}" target="_blank">Project
+            <a style="color:blue;" href="{{i['YOUTUBE_LINK']}}" target="_blank">Project
               YouTube Link</a>
           </p>
           {% endif %}
 
-          {% if i['project_deployment_link'] != '' %}
+          {% if i['DEPLOYMENT_LINK'] != '' %}
           <p>
-            <a style="color:blue;" href="{{i['project_deployment_link']}}" target="_blank">Project
+            <a style="color:blue;" href="{{i['DEPLOYMENT_LINK']}}" target="_blank">Project
               Deployment Link</a>
           </p>
           {% endif %}
 
-          {% if i['project_git_link'] != '' %}
+          {% if i['GIT_LINK'] != '' %}
           <p>
-            <a style="color:blue;" href="{{i['project_git_link']}}" target="_blank">Project
+            <a style="color:blue;" href="{{i['GIT_LINK']}}" target="_blank">Project
               Git Link</a>
           </p>
           {% endif %}
@@ -189,6 +189,7 @@
     </ul>
     <br>
     {% endfor %}
+  </section>
 </body>
 
 </html>
