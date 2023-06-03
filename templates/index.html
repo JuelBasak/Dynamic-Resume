@@ -5,9 +5,6 @@
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-    rel="stylesheet">
   <link href="../static/style.css" rel="stylesheet">
   <title>Biswajit Basak's Resume</title>
 </head>
@@ -34,7 +31,8 @@
           <ul class="timeline">
             {% for education in main_dict['EDUCATION'] %}
             <li class="event">
-              <span class="duration">From {{education['START_DATE']}} To {{education['END_DATE']}} ({{education['DURATION']}}) </span>
+              <span class="duration">From {{education['START_DATE']}} To {{education['END_DATE']}}
+                ({{education['DURATION']}}) </span>
               <div class="content">
                 <h3>{{education['DEGREE']}}</h3>
                 <p><em>{{education['UNIVERSITY']}}</em></p>
@@ -65,28 +63,6 @@
 
           </ul>
         </section>
-
-        <br>
-
-        <h2>Skills/Interests</h2>
-        <ul>
-          <li>
-            <h3>Skills</h3>
-            <ol type="1">
-              {% for i in main_dict['SKILLS'] %}
-                <li>{{i['SKILL_NAME']}}</li>
-              {% endfor %}
-            </ol>
-          </li>
-          <li>
-            <h3>Interests</h3>
-            <ol type="1">
-              {% for i in main_dict['INTERESTS'] %}
-                <li>{{i['INTEREST_NAME']}}</li>
-              {% endfor %}
-            </ol>
-          </li>
-        </ul>
       </section>
     </div>
 
@@ -103,13 +79,16 @@
               target="_blank">{{main_dict['ABOUT_ME'][0]['LINKEDIN']}}</a>
             <img alt="" src="/static/images/linkedin-5-64.png">
           </li>
-          <li><a href="https://{{main_dict['ABOUT_ME'][0]['GIT']}}" target="_blank">{{main_dict['ABOUT_ME'][0]['GIT']}}</a>
+          <li><a href="https://{{main_dict['ABOUT_ME'][0]['GIT']}}"
+              target="_blank">{{main_dict['ABOUT_ME'][0]['GIT']}}</a>
             <img alt="" src="/static/images/github-10-64.png">
           </li>
-          <li><a href="https://www.{{main_dict['ABOUT_ME'][0]['LEETCODE']}}" target="_blank">{{main_dict['ABOUT_ME'][0]['LEETCODE']}}</a>
+          <li><a href="https://www.{{main_dict['ABOUT_ME'][0]['LEETCODE']}}"
+              target="_blank">{{main_dict['ABOUT_ME'][0]['LEETCODE']}}</a>
             <img alt="" src="/static/images/kaggle.png">
           </li>
-          <li><a href="https://www.{{main_dict['ABOUT_ME'][0]['YOUTUBE']}}" target="_blank">{{main_dict['ABOUT_ME'][0]['YOUTUBE']}}</a>
+          <li><a href="https://www.{{main_dict['ABOUT_ME'][0]['YOUTUBE']}}"
+              target="_blank">{{main_dict['ABOUT_ME'][0]['YOUTUBE']}}</a>
             <img alt="" src="/static/images/kaggle.png">
           </li>
         </ul>
@@ -121,38 +100,58 @@
           <p>
           <ol type="1">
             {% for i in main_dict['PROFESSION'] %}
-                <li>{{i['DESCRIPTION']}}</li>
-              {% endfor %}
+            <li>{{i['DESCRIPTION']}}</li>
+            {% endfor %}
           </ol>
           </p>
         </section>
       </section>
 
-        <section class="certificates">
-          <h2>Certificates</h2>
+      <section class="certificates">
+        <h2>Certificates</h2>
 
-          {% for i in main_dict['CERTIFICATES'] %}
+        {% for i in main_dict['CERTIFICATES'] %}
 
-            <ul class="timeline">
-              <li class="event">
-                <span class="duration">From {{i['START_DATE']}} To {{i['END_DATE']}}</span>
-                
-                <div class="content">
-                  <h3>{{i['CERTIFICATE_NAME']}}</h3>
-                  <h3>{{i['ISSUER']}}</h3>
-                  <p>{{i['LOCATION']}}</p>
-                  <p>{{i['DETAILS']}}</p>
-                  <p>
-                    <a href="{{i['CERTIFICATE_LINK']}}"
-                      style="color:blue;"
-                      target="_blank">Certificate Link</a>
-                  </p>
-                </div>
-              </li>
-            </ul>
-          <br>
-          {% endfor %}
-        </section>
+        <ul class="timeline">
+          <li class="event">
+            <span class="duration">From {{i['START_DATE']}} To {{i['END_DATE']}}</span>
+
+            <div class="content">
+              <h3>{{i['CERTIFICATE_NAME']}}</h3>
+              <h3>{{i['ISSUER']}}</h3>
+              <p>{{i['LOCATION']}}</p>
+              <p>{{i['DETAILS']}}</p>
+              <p>
+                <a href="{{i['CERTIFICATE_LINK']}}" style="color:blue;" target="_blank">Certificate Link</a>
+              </p>
+            </div>
+          </li>
+        </ul>
+        <br>
+        {% endfor %}
+      </section>
+
+      <section class="skills">
+        <h2>Skills/Interests</h2>
+        <ul>
+          <li>
+            <h3>Skills</h3>
+            <ol type="1">
+              {% for i in main_dict['SKILLS'] %}
+              <li>{{i['SKILL_NAME']}}</li>
+              {% endfor %}
+            </ol>
+          </li>
+          <li>
+            <h3>Interests</h3>
+            <ol type="1">
+              {% for i in main_dict['INTERESTS'] %}
+              <li>{{i['INTEREST_NAME']}}</li>
+              {% endfor %}
+            </ol>
+          </li>
+        </ul>
+      </section>
     </div>
   </div>
 
@@ -164,7 +163,7 @@
     <ul class="timeline">
       <li class="event">
         <span class="duration">From {{i['START_DATE']}} To {{i['END_DATE']}}</span>
-        
+
         <div class="content">
           <h3>{{i['PROJECT_NAME']}}</h3>
           <p>{{i['DETAILS']}}

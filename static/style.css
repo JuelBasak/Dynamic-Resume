@@ -1,5 +1,4 @@
-
-
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -8,16 +7,13 @@
 
 html {
   color: #333;
-  font-family: "Josefin Sans";
+  font-family: "Titillium Web", sans-serif;
   line-height: 1.5;
-  
 }
 
 body {
   padding: 2rem 2.5rem;
-  /* background-image: linear-gradient(#888, salmon); */
-  background-image: linear-gradient(#888, salmon);
-  
+  background-image: linear-gradient(#888, rgb(98, 224, 255));
 }
 
 h1 {
@@ -45,7 +41,7 @@ p {
 }
 
 section + section {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 a {
@@ -84,7 +80,7 @@ ul {
   font-size: 0.8rem;
 }
 
-.column .contact img{
+.column .contact img {
   width: 1rem;
   margin-bottom: -3px;
 }
@@ -92,7 +88,8 @@ ul {
 .section1 > ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 1rem;
+  grid-gap: 10rem;
+  /* border: 5px solid red; */
 }
 
 .timeline .event + .event {
@@ -102,12 +99,18 @@ ul {
 .timeline .event {
   display: grid;
   grid-template-columns: 5ch 1fr;
+  /* border: 5px solid blueviolet; */
 }
+
+/* .timeline .event .duration {
+  border: 5px solid cyan;
+} */
 
 .timeline .content {
   border-left: 1px solid #888;
-  padding-left: 1rem;
+  padding-left: 2rem;
   margin-left: 1rem;
+  /* border: 5px solid black; */
 }
 
 .content > h3 + p {
@@ -125,45 +128,15 @@ ul {
   padding-top: 3rem;
   padding-left: 3rem;
   padding-right: 3rem;
-  
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
 }
 
-.project{
+.project {
   background-color: white;
   padding: 3rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-
-@media print {
-<<<<<<< HEAD
-  p, li, section.education h2
-=======
-  /* div.resume {
-    overflow: hidden;
-  } */
-
-  /* div.education,
-  div.experience,
-  div.certificates */
-
-  p, li, education h2
->>>>>>> main
-  {
-    page-break-inside: avoid;
-    border: 0;
-  }
-}
-
-<<<<<<< HEAD
-  body{
-    background: white;
-  }
-
-}
-=======
->>>>>>> main
