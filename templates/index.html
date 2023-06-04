@@ -157,7 +157,6 @@
 
   <section class="project">
     <h2>Projects</h2>
-
     {% for i in main_dict['PROJECTS'] %}
 
     <ul class="timeline">
@@ -166,23 +165,23 @@
 
         <div class="content">
           <h3>{{i['PROJECT_NAME']}}</h3>
-          <p>{{i['DETAILS']}}
-          </p>
-          {% if i['YOUTUBE_LINK'] != None %}
+          <p>{{i['DETAILS']}}</p>
+
+          {% if i['YOUTUBE_LINK'] != 'EMPTY' %}
           <p>
             <a href="{{i['YOUTUBE_LINK']}}" style="color:blue;" target="_blank">Project
               YouTube Link</a>
           </p>
           {% endif %}
 
-          {% if i['DEPLOYMENT_LINK'] != '' %}
+          {% if i['DEPLOYMENT_LINK'] != 'EMPTY' %}
           <p>
             <a href="{{i['DEPLOYMENT_LINK']}}" style="color:blue;" target="_blank">Project
               Deployment Link</a>
           </p>
           {% endif %}
 
-          {% if i['GIT_LINK'] != '' %}
+          {% if i['GIT_LINK'] != 'EMPTY' %}
           <p>
             <a href="{{i['GIT_LINK']}}" style="color:blue;" target="_blank">Project
               Git Link</a>
