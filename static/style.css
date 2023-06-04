@@ -13,7 +13,7 @@ html {
 
 body {
   padding: 2rem 2.5rem;
-  background-image: linear-gradient(#888, rgb(98, 224, 255));
+  background-image: linear-gradient(-30deg, #888, rgb(98, 224, 255));
 }
 
 h1 {
@@ -89,7 +89,6 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 10rem;
-  /* border: 5px solid red; */
 }
 
 .timeline .event + .event {
@@ -98,24 +97,32 @@ ul {
 
 .timeline .event {
   display: grid;
-  grid-template-columns: 5ch 1fr;
+  grid-template-columns: 10ch 1fr;
   /* border: 5px solid blueviolet; */
 }
 
 /* .timeline .event .duration {
-  border: 5px solid cyan;
+  border: 5px solid blue;
 } */
 
 .timeline .content {
   border-left: 1px solid #888;
-  padding-left: 2rem;
-  margin-left: 1rem;
+  padding-left: 1rem;
   /* border: 5px solid black; */
 }
 
 .content > h3 + p {
   margin-bottom: 1rem;
   color: #333;
+}
+
+.list-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-container > li {
+  flex-basis: 48%;
 }
 
 .resume {
